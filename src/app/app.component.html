@@ -1,7 +1,7 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div style="width: 30%;"> 
+    <div class="sidenav-container"> 
       <div class="sidenav">
         <a routerLink="/accounts" *ngIf="accounts">Accounts</a>
         <a routerLink="/transactions" *ngIf="transactions">Transactions</a>
@@ -9,7 +9,7 @@
         <a routerLink="/users" *ngIf="users">Users</a>
       </div>
     </div>
-    <div style="width: 69%;">    
+    <div class="rOutlet-container">    
       <router-outlet></router-outlet>
     </div>
   </div>
