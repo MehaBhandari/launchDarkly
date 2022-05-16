@@ -1,0 +1,19 @@
+<h2>Accounts Module</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <button type="button" [disabled]="!delete" class="btn btn-warning">Delete</button>
+    </div>
+    <div class="col-md-9">
+      <p>The button will be disabled when the feature is disbaled.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <button type="button" *ngIf="delete" class="btn btn-danger">Delete</button>
+    </div>
+    <div class="col-md-9">
+      <p>The button will be inexistent when the feature is disabled.</p>
+    </div>
+  </div>
+</div>
