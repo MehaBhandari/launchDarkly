@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FeatureFlagService } from 'src/feature-flag/feature-flag.service';
 
 @Component({
-  selector: 'app-feature1',
-  templateUrl: './feature1.component.html',
-  styleUrls: ['./feature1.component.scss']
+  selector: 'accounts',
+  templateUrl: './accounts.component.html',
+  styleUrls: ['./accounts.component.scss']
 })
-export class Feature1Component {
+export class AccountsComponent {
   delete: boolean = false;
   constructor(private featureFlag: FeatureFlagService) {
     this.featureFlag.flagChange.subscribe(res => {
