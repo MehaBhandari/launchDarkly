@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FeatureFlagService } from 'src/feature-flag/feature-flag.service';
 
 @Component({
@@ -8,16 +9,16 @@ import { FeatureFlagService } from 'src/feature-flag/feature-flag.service';
 })
 export class AppComponent {
   title = 'LaunchDarklyPOC';
-  accounts: boolean = false;
-  transactions: boolean = false;
-  reports: boolean = false;
-  users: boolean = false;
-  constructor(private featureFlag: FeatureFlagService) {
-    this.featureFlag.flagChange.subscribe((res) => {
-      this.accounts = res.feature1;
-      this.transactions = res.feature2;
-      this.reports = res.feature3;
-      this.users = res.feature4;
-    });
+  loggedInUser: any = sessionStorage.getItem("user");
+
+  constructor(private router: Router) {
+    this.checkForUser();
   }
+
+  checkForUser() {
+    if(!this.loggedInUser){
+      this.router.navigateByUrl("login");
+    }
+  }
+
 }
