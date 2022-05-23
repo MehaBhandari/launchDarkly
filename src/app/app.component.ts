@@ -18,6 +18,8 @@ export class AppComponent {
   checkForUser() {
     if(!this.loggedInUser){
       this.router.navigateByUrl("login");
+    } else if(!!this.loggedInUser) {
+      this.router.navigateByUrl("home");
     }
   }
 

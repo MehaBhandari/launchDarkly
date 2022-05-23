@@ -4,7 +4,9 @@
     <label for="uname"><b>Username</b></label>
     <input type="text" placeholder="Enter Username" name="uname"
     [(ngModel)]="userName"
-    required>        
+    required>    
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
     <button (click)="setUser()">Login</button>
   </div>
 </form>

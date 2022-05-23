@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   setUser() {
     if(this.usersToInstitutionMap[this.userName]) {
       sessionStorage.setItem("user", JSON.stringify(this.usersToInstitutionMap[this.userName]));
-      this.router.navigateByUrl("home");
+      this.router.navigateByUrl("home").then(() => {window.location.reload();});
     } else {
       alert("Invalid User!");
     }

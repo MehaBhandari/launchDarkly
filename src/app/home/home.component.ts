@@ -14,9 +14,12 @@ export class HomeComponent implements OnInit, OnDestroy {
   transactions: boolean = false;
   reports: boolean = false;
   users: boolean = false;
-  featureFlagSubscription: Subscription;
+  featureFlagSubscription: any;
 
   constructor(private featureFlag: FeatureFlagService, private router: Router) {
+  }
+
+  ngOnInit(): void {
     this.featureFlag.fetchFeatureFlags(JSON.parse(this.loggedInUser));
     this.featureFlagSubscription = this.featureFlag.flagChange.subscribe((res) => {
       console.log("res", res  );
@@ -25,10 +28,6 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.reports = res.feature3;
       this.users = res.feature4;
     });
-    // console.log("featureFlagSubscription", this.featureFlagSubscription);
-  }
-
-  ngOnInit(): void {
   }
 
   ngOnDestroy(): void {

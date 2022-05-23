@@ -5,6 +5,6 @@ export const usersToInstitutionMap = {
     },
     "userB2": {
         userName: "userB2",
-        instituition: "987654321"
+        institution: "987654321"
     }
 }

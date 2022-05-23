@@ -12,7 +12,7 @@ export class FeatureFlagService {
   user: LDClient.LDUser = {
     key: 'aa0ceb'
   };
-  client = LDClient.initialize(this.CLIENT_SIDE_ID, this.user);
+  client: any;
   flagChange: Subject<any> = new Subject();
   flags: LDFlagSet = {};
   constructor() {}
@@ -25,6 +25,7 @@ export class FeatureFlagService {
   fetchFeatureFlags(user: any) {
     if(!!user) {
       this.user.key = user.institution;
+      this.client = LDClient.initialize(this.CLIENT_SIDE_ID, this.user);
     }
     this.client.on('ready', () => {
       this.setFlags();
