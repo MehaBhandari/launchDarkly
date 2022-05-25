@@ -1,8 +1,14 @@
-<h2>Login</h2>
-<form>
+<div class="container-fluid">
+  <div class="row header-container"> 
+    <div class="header">
+      <h3>Login</h3>
+    </div>
+  </div>
+</div>
+<form class="form-login">
   <div class="container">
     <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname"
+    <input type="text" class="form-control" placeholder="Enter Username" name="uname"
     [(ngModel)]="userName"
     required>    
     <label for="psw"><b>Password</b></label>

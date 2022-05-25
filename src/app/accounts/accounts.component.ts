@@ -7,13 +7,14 @@ import { FeatureFlagService } from 'src/feature-flag/feature-flag.service';
   styleUrls: ['./accounts.component.scss']
 })
 export class AccountsComponent {
-  delete: boolean = false;
-  constructor(private featureFlag: FeatureFlagService) {
+  delete: boolean = this.featureFlag.flags['delete'];
+  constructor(private featureFlag: FeatureFlagService) {}
+
+  ngOnInit() {
     this.featureFlag.flagChange.subscribe(res => {
       this.delete = res.delete;
       console.log("flags", this.delete);
-    });
+      this.featureFlag.flags['delete'] = res.delete;
+    });    
   }
-
-
 }

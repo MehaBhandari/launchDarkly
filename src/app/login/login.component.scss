@@ -1,4 +1,26 @@
-form {border: 3px solid #f1f1f1;}
+.container-fluid {
+  padding: 0px;
+}
+.header {
+  background-color: #2b5373;
+  color: #eee;
+  padding: 5px;
+  text-align: center;
+}
+.form-login {
+  box-shadow: 1px 1px 1px 3px rgb(0 0 0 / 10%);
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  width: 90%;
+  max-width: 500px;
+  margin: 0 auto;
+  transform: translate(-50%,-50%);
+  padding: 25px;
+  background-color: hsla(0,0%,100%,.8);
+  border-radius: 3px;
+  z-index: 200;
+}
 
 input[type=text], [type=password] {
   width: 100%;
@@ -10,9 +32,9 @@ input[type=text], [type=password] {
 }
 
 button {
-  background-color: #04AA6D;
+  background-color: #3878ab;
   color: white;
-  padding: 14px 20px;
+  padding: 10px 20px;
   margin: 8px 0;
   border: none;
   cursor: pointer;
@@ -21,12 +43,6 @@ button {
 
 button:hover {
   opacity: 0.8;
-}
-
-
-.container {
-  padding: 16px;
-  width: 500px;
 }
 
 span.psw {

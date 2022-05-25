@@ -1,17 +1,22 @@
 <div class="container-fluid">
-    <div class="row">
-      <div class="sidenav-container"> 
-        <div class="sidenav">
-          <a routerLink="accounts" *ngIf="accounts">Accounts</a>
-          <a routerLink="transactions" *ngIf="transactions">Transactions</a>
-          <a routerLink="reports" *ngIf="reports">Reports</a>
-          <a routerLink="users" *ngIf="users">Users</a>
-          <hr>
-          <a (click)="logout()">Logout</a>
-        </div>
-      </div>
-      <div class="rOutlet-container">
-        <router-outlet></router-outlet>
-      </div>
+  <div class="row header-container"> 
+    <div class="header">
+      <h3>LaunchDarkly Demo</h3>
     </div>
   </div>
+  <div class="row">
+    <div class="sidenav-container"> 
+      <div class="sidenav">
+        <a routerLink="accounts" *ngIf="accounts">Accounts</a>
+        <a routerLink="transactions" *ngIf="transactions">Transactions</a>
+        <a routerLink="reports" *ngIf="reports">Reports</a>
+        <a routerLink="users" *ngIf="users">Users</a>
+        <hr>
+        <a (click)="logout()">Logout</a>
+      </div>
+    </div>    
+    <div class="rOutlet-container">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
