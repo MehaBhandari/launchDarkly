@@ -10,10 +10,10 @@ import { FeatureFlagService } from 'src/feature-flag/feature-flag.service';
 })
 export class HomeComponent implements OnInit, OnDestroy {
   loggedInUser: any = sessionStorage.getItem("user");
-  accounts: boolean = this.featureFlag.flags['feature1'];
-  transactions: boolean = this.featureFlag.flags['feature2'];
-  reports: boolean = this.featureFlag.flags['feature3'];
-  users: boolean = this.featureFlag.flags['feature4'];
+  accounts: boolean = this.featureFlag.flags['accounts'] || false;
+  transactions: boolean = this.featureFlag.flags['transcations'] || false;
+  reports: boolean = this.featureFlag.flags['reports'] || false;
+  users: boolean = this.featureFlag.flags['users'] || false;
   featureFlagSubscription: any;
 
   constructor(private featureFlag: FeatureFlagService, private router: Router) {
@@ -22,10 +22,10 @@ export class HomeComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.featureFlag.fetchFeatureFlags(JSON.parse(this.loggedInUser));
     this.featureFlagSubscription = this.featureFlag.flagChange.subscribe((res) => {
-      this.accounts = res.feature1;
-      this.transactions = res.feature2;
-      this.reports = res.feature3;
-      this.users = res.feature4;
+      this.accounts = res.accounts;
+      this.transactions = res.transcations;
+      this.reports = res.reports;
+      this.users = res.users;
     });
   }
 

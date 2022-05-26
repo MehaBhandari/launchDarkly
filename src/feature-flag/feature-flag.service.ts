@@ -8,9 +8,9 @@ import { Subject } from 'rxjs';
 })
 export class FeatureFlagService {
 
-  private CLIENT_SIDE_ID: string = '627ba09428c46215aafd15af';
+  private CLIENT_SIDE_ID: string = '628202e3e190da14ce644b47';
   user: LDClient.LDUser = {
-    key: 'aa0ceb'
+    key: ''
   };
   client: any;
   flagChange: Subject<any> = new Subject();
