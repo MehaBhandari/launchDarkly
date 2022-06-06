@@ -22,10 +22,10 @@ export class HomeComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.featureFlag.fetchFeatureFlags(JSON.parse(this.loggedInUser));
     this.featureFlagSubscription = this.featureFlag.flagChange.subscribe((res) => {
-      this.accounts = res.accounts;
-      this.transactions = res.transcations;
-      this.reports = res.reports;
-      this.users = res.users;
+      this.accounts = res["L-AC-Accounts"];
+      this.transactions = res["L-AC-Transactions"];
+      this.reports = res["L-AC-Reports"];
+      this.users = res["L-AC-Users"];
     });
   }
 

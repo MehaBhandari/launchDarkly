@@ -8,7 +8,7 @@ import { Subject } from 'rxjs';
 })
 export class FeatureFlagService {
 
-  private CLIENT_SIDE_ID: string = '628202e3e190da14ce644b47';
+  private CLIENT_SIDE_ID: string = '629c8f47283a8a1518e19637';
   user: LDClient.LDUser = {
     key: ''
   };
